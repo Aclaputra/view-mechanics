@@ -50,7 +50,7 @@ public class GameScreen extends ScreenAdapter {
 //        model = modelBuilder.createBox(2f, 2f, 2f,
 //                new Material(ColorAttribute.createDiffuse(0.3f, 0.6f, 0.9f, 1f)),
 //                VertexAttributes.Usage.Position | VertexAttributes.Usage.Normal);
-        model = new G3dModelLoader(new JsonReader()).loadModel(Gdx.files.internal("drop_pack/fish.g3dj"));
+        model = new G3dModelLoader(new JsonReader()).loadModel(Gdx.files.internal("drop_pack/fish_full_color.g3dj"));
         modelInstance = new ModelInstance(model);
         modelInstance.transform.setToTranslation(0f,0f,0f);
 
@@ -67,7 +67,7 @@ public class GameScreen extends ScreenAdapter {
                 return true;
             }
         });
-        System.out.println(Gdx.files.internal("drop_pack/fish.g3dj").file().getAbsolutePath());
+        System.out.println(Gdx.files.internal("drop_pack/fish_full_color.g3dj").file().getAbsolutePath());
     }
 
     @Override
@@ -114,8 +114,6 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void hide() {
-//        batch.dispose();
-//        playerTexture.dispose();
         modelBatch.dispose();
         model.dispose();
     }
